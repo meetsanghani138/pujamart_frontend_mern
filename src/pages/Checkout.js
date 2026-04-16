@@ -26,6 +26,7 @@ function Checkout() {
         }
       })
       .catch((err) => console.log(err));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const total = Array.isArray(cartItems)

@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Login.css"; // reuse same styling
-import Navbar from "../components/Navbar";
+
 
 function About() {
   return (

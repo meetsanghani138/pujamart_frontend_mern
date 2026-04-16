@@ -11,7 +11,7 @@ function Register() {
   const [cpass, setCpass] = useState("");
   const [address, setAddress] = useState("");
   const [error, setError] = useState("");
-  const [role, setRole] = useState("user");
+
 
 const handleRegister = async (e) => {
   e.preventDefault();

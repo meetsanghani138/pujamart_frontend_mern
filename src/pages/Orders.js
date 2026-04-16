@@ -11,6 +11,7 @@ function Orders() {
     fetch(`${process.env.REACT_APP_API_URL}/api/orders/${user._id}`)
       .then(res => res.json())
       .then(data => setOrders(data.orders || []));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

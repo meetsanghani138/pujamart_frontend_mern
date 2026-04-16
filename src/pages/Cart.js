@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import "../css/Cart.css";
-import product from "../PHOTOS/product.jpg";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -66,6 +65,7 @@ function Cart() {
       return;
     }
     fetchCart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ✅ INCREASE QTY
