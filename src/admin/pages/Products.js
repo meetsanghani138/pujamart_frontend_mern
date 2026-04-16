@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminNavbar from "../components/AdminNavbar";
 import "../css/Products.css";
@@ -7,32 +8,46 @@ import "../css/Products.css";
 function Products() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
-  // Fetch all products
+  // Fetch Products
   useEffect(() => {
     fetchProducts();
   }, []);
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/products/all`);
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/products/all`
+      );
+
       setProducts(res.data.products || []);
     } catch (error) {
-      console.log(error);
+      console.log("Fetch Error:", error);
     }
   };
 
-  // Delete product
+  // Delete Product
   const deleteProduct = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+
+    if (!confirmDelete) return;
+
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/api/products/delete/${id}`);
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/api/products/delete/${id}`
+      );
+
+      alert("Product Deleted Successfully");
       fetchProducts();
     } catch (error) {
-      console.log(error);
+      console.log("Delete Error:", error);
     }
   };
 
-  // Search filter
+  // Search Filter
   const filteredProducts = products.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -76,13 +91,22 @@ function Products() {
 
                     <td>
                       <img
-                        src={`${process.env.REACT_APP_API_URL}/uploads/${product.image}`}
+                        src={
+                          product.image?.startsWith("http")
+                            ? product.image
+                            : product.image?.startsWith("/uploads/")
+                            ? `${process.env.REACT_APP_API_URL}${product.image}`
+                            : `${process.env.REACT_APP_API_URL}/uploads/${product.image}`
+                        }
                         alt={product.name}
                         style={{
                           width: "50px",
                           height: "50px",
                           objectFit: "cover",
-                          borderRadius: "8px"
+                          borderRadius: "8px",
+                        }}
+                        onError={(e) => {
+                          e.target.src = "/no-image.png";
                         }}
                       />
                     </td>
@@ -93,7 +117,14 @@ function Products() {
                     <td>{product.stock}</td>
 
                     <td>
-                      <button className="edit-btn">Edit</button>
+                      <button
+                        className="edit-btn"
+                        onClick={() =>
+                          navigate(`/admin/edit-product/${product._id}`)
+                        }
+                      >
+                        Edit
+                      </button>
 
                       <button
                         className="delete-btn"
