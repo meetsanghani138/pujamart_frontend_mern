@@ -76,7 +76,7 @@ function Products() {
 
                     <td>
                       <img
-                        src={`${process.env.REACT_APP_API_URL}/${product.image}`}
+                        src={`${process.env.REACT_APP_API_URL}/uploads/${product.image}`}
                         alt={product.name}
                         style={{
                           width: "50px",

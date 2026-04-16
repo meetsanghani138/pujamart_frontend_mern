@@ -77,7 +77,7 @@ function Products() {
             <div className="product-card" key={item._id}>
 
               <img
-                src={`${process.env.REACT_APP_API_URL}/${item.image}`}
+                src={`${process.env.REACT_APP_API_URL}/uploads/${item.image}`}
                 alt={item.name}
               />
 

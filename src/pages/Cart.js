@@ -147,7 +147,7 @@ function Cart() {
             {cartItems.map((item) => (
               <div className="cart-card" key={item._id}>
                <img
-  src={`${process.env.REACT_APP_API_URL}/${item.image}`}
+  src={`${process.env.REACT_APP_API_URL}/uploads/${item.image}`}
   alt={item.name}
 />
                 <h3>{item.name}</h3>
