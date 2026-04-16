@@ -1,0 +1,145 @@
+/* ===================================
+   ORDERS PAGE CSS
+   Theme Colors:
+   #121212
+   #2C2C2C
+   #FF3D00
+=================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   Main Container
+========================= */
+
+.orders-page {
+  min-height: 100vh;
+  padding: 40px 6%;
+  color: white;
+}
+
+/* =========================
+   Heading
+========================= */
+
+.orders-page h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 35px;
+  font-weight: 700;
+  color: white;
+}
+
+/* =========================
+   Order Card
+========================= */
+
+.order-card {
+  background: #2C2C2C;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  border-left: 5px solid #FF3D00;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   Order Title
+========================= */
+
+.order-card h3 {
+  font-size: 22px;
+  color: #FF3D00;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Order Info
+========================= */
+
+.order-card p {
+  font-size: 17px;
+  color: #ddd;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Status Badge
+========================= */
+
+.status {
+  display: inline-block;
+  background: #FF3D00;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+/* =========================
+   Product List
+========================= */
+
+.order-items {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.order-items p {
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   Empty Orders
+========================= */
+
+.no-orders {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 22px;
+  color: #999;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .orders-page {
+    padding: 25px;
+  }
+
+  .orders-page h1 {
+    font-size: 32px;
+  }
+
+  .order-card {
+    padding: 18px;
+  }
+
+  .order-card h3 {
+    font-size: 18px;
+  }
+
+  .order-card p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,36 @@
+/* ===========================
+   Logout.css
+=========================== */
+.logout-container{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#121212;
+}
+
+.logout-box{
+background:#2C2C2C;
+padding:40px;
+border-radius:15px;
+text-align:center;
+color:white;
+}
+
+.logout-confirm,
+.logout-cancel{
+padding:10px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+}
+
+.logout-confirm{
+background:#FF3D00;
+}
+
+.logout-cancel{
+background:#444;
+}
+

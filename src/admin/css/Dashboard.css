@@ -1,0 +1,36 @@
+/* ===========================
+   Dashboard.css
+=========================== */
+.admin-container{
+display:flex;
+background:#121212;
+min-height:100vh;
+}
+
+.admin-main{
+flex:1;
+padding:20px;
+}
+
+.dashboard-section{
+background:#2C2C2C;
+padding:20px;
+margin-top:20px;
+border-radius:12px;
+color:white;
+}
+
+.dashboard-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td{
+padding:12px;
+border-bottom:1px solid #444;
+}
+
+.dashboard-table th{
+color:#FF3D00;
+}

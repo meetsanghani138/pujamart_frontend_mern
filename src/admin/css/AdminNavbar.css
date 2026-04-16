@@ -1,0 +1,39 @@
+/* ===========================
+   AdminNavbar.css
+=========================== */
+.admin-navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:#2C2C2C;
+margin:15px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.navbar-left h2{
+color:#FF3D00;
+}
+
+.navbar-search{
+padding:10px 15px;
+border:none;
+border-radius:25px;
+background:#121212;
+color:white;
+}
+
+.icon{
+padding:10px;
+border-radius:50%;
+background:#121212;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.icon:hover{
+background:#FF3D00;
+}
+

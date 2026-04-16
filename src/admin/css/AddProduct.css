@@ -1,0 +1,47 @@
+/* ===========================
+   AddProduct.css
+=========================== */
+.add-product{
+background:#2C2C2C;
+padding:30px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+color:white;
+}
+
+.add-product h2{
+margin-bottom:20px;
+color:#FF3D00;
+}
+
+.add-product form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.add-product input,
+.add-product select,
+.add-product textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+background:#121212;
+color:white;
+}
+
+.add-product button{
+padding:12px;
+background:#FF3D00;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.add-product button:hover{
+background:#e63600;
+}

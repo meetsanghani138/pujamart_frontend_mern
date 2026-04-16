@@ -1,0 +1,115 @@
+/* users.css */
+
+.users-page{
+  padding: 30px;
+}
+
+.users-page h2{
+  color: white;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.user-search{
+  width: 320px;
+  padding: 12px 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.users-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+}
+
+.user-card{
+  background: #3a3a3a;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  min-height: 420px;
+}
+
+.avatar{
+  width: 75px;
+  height: 75px;
+  background: #ff7300;
+  color: white;
+  font-size: 34px;
+  font-weight: bold;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.user-card h3{
+  color: white;
+  font-size: 28px;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.user-card p{
+  color: #e6e6e6;
+  font-size: 15px;
+  margin: 6px 0;
+  line-height: 24px;
+  word-break: break-word;
+}
+
+.user-status{
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.user-status.Active{
+  background: #22c55e;
+  color: white;
+}
+
+.user-status.Blocked{
+  background: red;
+  color: white;
+}
+
+.user-actions{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.user-actions button{
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.view-btn{
+  background: #3498db;
+}
+
+.block-btn{
+  background: #f1c40f;
+  color: black;
+}
+
+.delete-btn{
+  background: #e74c3c;
+}

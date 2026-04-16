@@ -1,0 +1,46 @@
+/* Navbar container */
+.navbar {
+  display: flex;              /* 🔥 makes everything in one line */
+  align-items: center;
+  justify-content: space-between;
+  background: #121212;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  color: #FF3D00;
+  margin: 0;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;              /* 🔥 horizontal */
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  color: #FF3D00;
+}
+
+/* Search bar */
+.search {
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Cart */
+.cart {
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,763 @@
+/* Pandit.css - Dark Neon Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: #121212;
+}
+
+/* Custom Scrollbar - Dark Theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2C2C2C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #FF3D00, #cc3100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #cc3100, #FF3D00);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 61, 0, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 61, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 61, 0, 0); }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-180deg) scale(0); opacity: 0; }
+  to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+/* Hero Section */
+.pandit-hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), 
+              url("../assets/images/panditbanar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Alternative Hero Section (if using the second one) */
+.pandit-hero-alt {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+  url("../assets/images/panditbanar.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Floating Elements */
+.hero-floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 70%; right: 15%; animation-delay: 1s; font-size: 4rem; }
+.floating-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 2s; font-size: 2.5rem; }
+.floating-element:nth-child(4) { top: 40%; right: 30%; animation-delay: 3s; font-size: 3.5rem; }
+.floating-element:nth-child(5) { bottom: 50%; left: 40%; animation-delay: 4s; font-size: 2rem; }
+
+.hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  animation: fadeInUp 1s ease;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #FF3D00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  color: #e0e0e0;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.hero-stat {
+  text-align: center;
+  animation: scaleIn 0.5s ease backwards;
+}
+
+.hero-stat:nth-child(1) { animation-delay: 0.2s; }
+.hero-stat:nth-child(2) { animation-delay: 0.4s; }
+.hero-stat:nth-child(3) { animation-delay: 0.6s; }
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FF3D00;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: #b0b0b0;
+}
+
+.book-btn {
+  padding: 14px 35px;
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-btn .btn-icon {
+  transition: transform 0.3s;
+}
+
+.book-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(255, 61, 0, 0.4);
+  padding: 14px 40px;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: -25px auto 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.tab-btn {
+  padding: 12px 35px;
+  background: #2C2C2C;
+  border: 2px solid #3a3a3a;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e0e0e0;
+}
+
+.tab-btn .tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+  transform: translateY(-3px);
+  border-color: #FF3D00;
+  background: #1a1a1a;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF3D00, #ff6a33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #a0a0a0;
+  font-size: 1rem;
+}
+
+/* Pandit Section */
+.pandit-section {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+}
+
+.pandit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+/* Pandit Card */
+.pandit-card {
+  background: #2C2C2C;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  animation: fadeInUp 0.6s ease backwards;
+  border: 1px solid #3a3a3a;
+}
+
+.pandit-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 50px rgba(255, 61, 0, 0.2);
+  border-color: #FF3D00;
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.available-badge, .tomorrow-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.available-badge {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  animation: pulseGlow 2s infinite;
+}
+
+.tomorrow-badge {
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  color: white;
+}
+
+.pandit-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.pandit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.pandit-card:hover .pandit-img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+}
+
+.stars {
+  color: #FF3D00;
+}
+
+.pandit-info {
+  padding: 20px;
+}
+
+.pandit-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.experience-badge, .specialty {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 8px 8px 0;
+  padding: 5px 12px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #FF3D00;
+}
+
+.languages {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.language-tag {
+  padding: 4px 12px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}
+
+.price-info {
+  margin: 15px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+.price-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FF3D00;
+}
+
+.book-pandit-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-pandit-btn .btn-arrow {
+  transition: transform 0.3s;
+}
+
+.book-pandit-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+.book-pandit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.4);
+}
+
+/* Puja Services Section */
+.puja-services {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: #2C2C2C;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: all 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease backwards;
+  border: 1px solid #3a3a3a;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(255, 61, 0, 0.15);
+  border-color: #FF3D00;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.service-details {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.service-price {
+  color: #FF3D00;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.service-duration {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
+.service-btn {
+  padding: 8px 25px;
+  background: transparent;
+  border: 2px solid #FF3D00;
+  color: #FF3D00;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.service-btn:hover {
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Booking Section */
+.booking-section {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+}
+
+.selected-pandit-card {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 15px 20px;
+  background: #2C2C2C;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #FF3D00;
+  animation: slideInLeft 0.5s ease;
+  border: 1px solid #3a3a3a;
+  border-left: 4px solid #FF3D00;
+}
+
+.selected-pandit-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e0e0e0;
+}
+
+.selected-icon {
+  font-size: 1.5rem;
+}
+
+.selected-specialty {
+  font-size: 0.85rem;
+  color: #FF3D00;
+  margin-left: 5px;
+}
+
+.change-pandit-btn {
+  padding: 5px 15px;
+  background: transparent;
+  border: 1px solid #FF3D00;
+  color: #FF3D00;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.change-pandit-btn:hover {
+  background: #FF3D00;
+  color: white;
+}
+
+/* Booking Form */
+.booking-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #2C2C2C;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border: 1px solid #3a3a3a;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 2px solid #3a3a3a;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FF3D00;
+  box-shadow: 0 0 0 4px rgba(255, 61, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 42px;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  color: #FF3D00;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.4);
+  gap: 15px;
+}
+
+/* Success Toast */
+.success-toast {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+  animation: slideInRight 0.5s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.toast-icon {
+  font-size: 2rem;
+}
+
+.toast-content strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.toast-content p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .pandit-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form {
+    padding: 25px;
+  }
+  
+  .tab-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .success-toast {
+    top: 80px;
+    right: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .pandit-card {
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,56 @@
+/* ===========================
+   Products.css
+=========================== */
+.products-page{
+background:#121212;
+padding:20px;
+min-height:100vh;
+color:white;
+}
+
+.products-page h2{
+color:#FF3D00;
+}
+
+.product-search{
+padding:10px;
+background:#2C2C2C;
+border:none;
+color:white;
+border-radius:8px;
+margin-bottom:20px;
+}
+
+.products-table{
+width:100%;
+border-collapse:collapse;
+background:#2C2C2C;
+border-radius:10px;
+overflow:hidden;
+}
+
+.products-table th,
+.products-table td{
+padding:12px;
+border-bottom:1px solid #444;
+}
+
+.products-table th{
+color:#FF3D00;
+}
+
+.edit-btn{
+background:#FF3D00;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+}
+
+.delete-btn{
+background:#555;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+}
